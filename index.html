@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.js"></script>
+    <style>
+        body{
+            line-height: 6em;
+            padding: 1em;
+        }
+        ul{
+            display: none;
+            list-style: none;
+            line-height: 3em;
+        }
+        .btn{
+            background-image: url(img/1.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        a{
+            font-family: '궁서';
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 3em;
+            margin-left: 0.5em;
+        }
+        a:hover{
+            color: #7a92ff;
+            background: #e5e2ff;
+        }
+
+        li a{
+            font-size: 2em;
+            color: rgb(92, 92, 92);
+        }
+        li a:hover{
+            color: #ff7a7a;
+            background: #ffe2e2;
+        }
+    </style>
+    <title>아코디언 메뉴 과제</title>
+</head>
+<body>
+    <p class="btn"><a href="#">한식</a>
+        <ul>
+            <li><a href="#">비빔밥</a></li>
+            <li><a href="#">국밥</a></li>
+            <li><a href="#">수정과</a></li>
+        </ul>
+    </p>
+    <p class="btn"><a href="#">중식</a>
+        <ul>
+            <li><a href="#">짜장면</a></li>
+            <li><a href="#">짬뽕</a></li>
+            <li><a href="#">탕수육</a></li>
+        </ul>
+    </p>
+    <p class="btn"><a href="#">일식</a>
+        <ul>
+            <li><a href="#">연어</a></li>
+            <li><a href="#">참치</a></li>
+            <li><a href="#">육회</a></li>
+        </ul>
+    </p>
+
+    <script>
+        $(function(){
+            $('.btn a').on('mouseover', function(){
+                $('.btn').next('ul').filter(':visible').slideUp();
+                
+                $(this).parent().next().slideDown();
+                
+                return false;
+            });
+        }); 
+    </script>
+</body>
+</html>
